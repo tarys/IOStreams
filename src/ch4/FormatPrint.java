@@ -1,3 +1,5 @@
+package ch4;
+
 /*
  * Copyright (c) 1995, 2008, Oracle and/or its affiliates. All rights reserved.
  *
@@ -27,32 +29,12 @@
  * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
  * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
- */ 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
+ */
+public class FormatPrint {
+    public static void main(String[] args) {
+        int i = 2;
+        double r = Math.sqrt(i);
 
-public class CopyBytes {
-    public static void main(String[] args) throws IOException {
-
-        FileInputStream in = null;
-        FileOutputStream out = null;
-
-        try {
-            in = new FileInputStream("xanadu.txt");
-            out = new FileOutputStream("outagain.txt");
-            int c;
-
-            while ((c = in.read()) != -1) {
-                out.write(c);
-            }
-        } finally {
-            if (in != null) {
-                in.close();
-            }
-            if (out != null) {
-                out.close();
-            }
-        }
+        System.out.format("The square root of %d is %f.%n", i, r);
     }
 }
